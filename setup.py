@@ -10,7 +10,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='py-super-xbr',
-    version='0.0.1',
+    version='0.0.2',
     long_description=long_description,
     long_description_content_type='text/markdown',
     ext_modules=extensions,
@@ -23,5 +23,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.12',
 )

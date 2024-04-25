@@ -15,11 +15,15 @@ Misery (Cave Story) scaled 4x ([Image source](https://www.spriters-resource.com/
 
 ## Requirements
 
-Python 3.6 or later. This was tested on Windows and Linux, but should also work on macOS.
+Python 3.12 or later. This was tested on Windows, but should also work on macOS and Linux.
 
 ## Installation
 
-This isn't uploaded to PyPI yet, so you'll have to build and install this from source.
+This isn't uploaded to PyPI yet (orginal still isn't, this probably won't too), so you'll have to build and install this from source.
+
+- `pip install git+https://github.com/MikiP98/py-super-xbr.git`
+
+OR:
 
 1. Clone this repository to your system
 2. Open a terminal and go to the repository's directory
@@ -92,13 +96,14 @@ To build a wheel:
 
 ## License
 
-py-super-xbr is available under the MIT License. The code is based on the
-[Super-xBR C++ port](https://pastebin.com/cbH8ZQQT) released by [Hylian](mailto:sergiogdb@gmail.com) also under the MIT
-License.
+[Updated py-super-xbr](https://github.com/MikiP98/py-super-xbr) is available under the [Apache License Version 2.0](http://www.apache.org/licenses/).<br>
+The code is based on the [py-super-xbr](https://github.com/n0spaces/py-super-xbr) released by [n0spaces](https://github.com/n0spaces) under the [MIT License](https://opensource.org/license/mit).<br>
+Which code is based on the [Super-xBR C++ port](https://pastebin.com/cbH8ZQQT) released by [Hylian](mailto:sergiogdb@gmail.com) also under the [MIT License](https://opensource.org/license/mit).
 
 See [LICENSE.txt](LICENSE.txt).
 
 ## See also
 
 * [Pixel-art scaling algorithms on Wikipedia](https://en.wikipedia.org/wiki/Pixel-art_scaling_algorithms)
+* [original py-super-xbr by n0spaces](https://github.com/n0spaces/py-super-xbr)
 * [Super-xBR explanation by Hylian](https://drive.google.com/file/d/0B_yrhrCRtu8GYkxreElSaktxS3M/view?pref=2&pli=1)
