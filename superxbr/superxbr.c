@@ -15339,7 +15339,7 @@ static PyObject *__pyx_pf_8superxbr_8superxbr_scale(CYTHON_UNUSED PyObject *__py
  *         if print_progress:
  *             print('pass {} of {}...'.format(p + 1, passes))             # <<<<<<<<<<<<<<
  *         im_buffer = scale_from_buffer(im_buffer, im.width * (2 ** p), im.height * (2 ** p), print_progress)
- *     return Image.frombuffer('RGBA', (im.width * (2 ** passes), im.height * (2 ** passes)), im_buffer)
+ *     return Image.frombuffer('RGBA', (int(im.width * (2 ** passes)), int(im.height * (2 ** passes))), im_buffer)
  */
       __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_pass_of, __pyx_n_s_format); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 414, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
@@ -15389,7 +15389,7 @@ static PyObject *__pyx_pf_8superxbr_8superxbr_scale(CYTHON_UNUSED PyObject *__py
  *         if print_progress:
  *             print('pass {} of {}...'.format(p + 1, passes))
  *         im_buffer = scale_from_buffer(im_buffer, im.width * (2 ** p), im.height * (2 ** p), print_progress)             # <<<<<<<<<<<<<<
- *     return Image.frombuffer('RGBA', (im.width * (2 ** passes), im.height * (2 ** passes)), im_buffer)
+ *     return Image.frombuffer('RGBA', (int(im.width * (2 ** passes)), int(im.height * (2 ** passes))), im_buffer)
  */
     __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_im, __pyx_n_s_width); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 415, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
@@ -15432,7 +15432,7 @@ static PyObject *__pyx_pf_8superxbr_8superxbr_scale(CYTHON_UNUSED PyObject *__py
   /* "superxbr/superxbr.pyx":416
  *             print('pass {} of {}...'.format(p + 1, passes))
  *         im_buffer = scale_from_buffer(im_buffer, im.width * (2 ** p), im.height * (2 ** p), print_progress)
- *     return Image.frombuffer('RGBA', (im.width * (2 ** passes), im.height * (2 ** passes)), im_buffer)             # <<<<<<<<<<<<<<
+ *     return Image.frombuffer('RGBA', (int(im.width * (2 ** passes)), int(im.height * (2 ** passes))), im_buffer)             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Image); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 416, __pyx_L1_error)
@@ -15448,30 +15448,36 @@ static PyObject *__pyx_pf_8superxbr_8superxbr_scale(CYTHON_UNUSED PyObject *__py
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_v_im, __pyx_n_s_height); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyNumber_Int(__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_im, __pyx_n_s_height); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_4 = PyFloat_FromDouble(pow(2.0, ((double)__pyx_v_passes))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_10 = PyNumber_Multiply(__pyx_t_9, __pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __pyx_t_10 = PyNumber_Multiply(__pyx_t_8, __pyx_t_4); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
-  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyNumber_Int(__pyx_t_10); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GIVEREF(__pyx_t_8);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_8)) __PYX_ERR(0, 416, __pyx_L1_error);
-  __Pyx_GIVEREF(__pyx_t_10);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_10)) __PYX_ERR(0, 416, __pyx_L1_error);
-  __pyx_t_8 = 0;
-  __pyx_t_10 = 0;
-  __pyx_t_10 = NULL;
+  __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+  __pyx_t_10 = PyTuple_New(2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_10);
+  __Pyx_GIVEREF(__pyx_t_9);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_9)) __PYX_ERR(0, 416, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_4);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_10, 1, __pyx_t_4)) __PYX_ERR(0, 416, __pyx_L1_error);
+  __pyx_t_9 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_4 = NULL;
   __pyx_t_11 = 0;
   #if CYTHON_UNPACK_METHODS
   if (unlikely(PyMethod_Check(__pyx_t_3))) {
-    __pyx_t_10 = PyMethod_GET_SELF(__pyx_t_3);
-    if (likely(__pyx_t_10)) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
-      __Pyx_INCREF(__pyx_t_10);
+      __Pyx_INCREF(__pyx_t_4);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_3, function);
       __pyx_t_11 = 1;
@@ -15479,10 +15485,10 @@ static PyObject *__pyx_pf_8superxbr_8superxbr_scale(CYTHON_UNUSED PyObject *__py
   }
   #endif
   {
-    PyObject *__pyx_callargs[4] = {__pyx_t_10, __pyx_n_s_RGBA, __pyx_t_4, __pyx_v_im_buffer};
+    PyObject *__pyx_callargs[4] = {__pyx_t_4, __pyx_n_s_RGBA, __pyx_t_10, __pyx_v_im_buffer};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_11, 3+__pyx_t_11);
-    __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 416, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;

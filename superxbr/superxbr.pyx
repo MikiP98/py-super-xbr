@@ -413,4 +413,4 @@ def scale(im: Image.Image, int passes=1, print_progress=False) -> Image.Image:
         if print_progress:
             print('pass {} of {}...'.format(p + 1, passes))
         im_buffer = scale_from_buffer(im_buffer, im.width * (2 ** p), im.height * (2 ** p), print_progress)
-    return Image.frombuffer('RGBA', (im.width * (2 ** passes), im.height * (2 ** passes)), im_buffer)
+    return Image.frombuffer('RGBA', (int(im.width * (2 ** passes)), int(im.height * (2 ** passes))), im_buffer)
